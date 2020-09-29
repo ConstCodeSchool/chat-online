@@ -1,0 +1,29 @@
+.message-panel {
+	height: calc(100vh - 150px);
+}
+
+.message_info {
+	border-right: 1px solid gray;
+	text-align: center;
+	padding-right: 15px;
+	min-width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.message_info small {
+	display: block;
+	text-align: center;
+}
+
+.message_info_autor {
+	font-weight: bold;
+}
+
+.message_content {
+	padding-left: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
