@@ -22,7 +22,10 @@ export default class Chat extends EventEmitter {
 	addMessage(data) {
 		const message = new Message(data.user, data.date, data.content);
 		this.messages.push(message);
-		this.view.querySelector("[data-messages]").append(message.view);
+
+		const messagesPlate = this.view.querySelector("[data-messages]");
+		messagesPlate.append(message.view);
+		messagesPlate.scrollTop = messagesPlate.scrollHeight;
 	}
 
 	clearInput() {
