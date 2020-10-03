@@ -5,6 +5,8 @@ const io = require("socket.io")(http);
 const session = require("express-session");
 const path = require("path");
 
+const port = process.env.NODE_ENV === "production" ? 80 : 3000;
+
 let messages = [];
 
 // Use the session middleware
@@ -80,10 +82,8 @@ io.on("connection", (socket) => {
 		session.userName = name;
 		session.save();
 	});
-
-	console.log("a user connected");
 });
 
-http.listen(3000, () => {
-	console.log("listening on *:3000");
+http.listen(port, () => {
+	console.log("listening on *:" + port);
 });
